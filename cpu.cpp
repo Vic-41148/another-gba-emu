@@ -112,6 +112,34 @@ public:
     {
         return OAMOBJAttributes;
     }
+
+    void setBGOBJPaletteRAM(std::vector<int>&x)
+    {
+        if(x.size()!=BGOBJPaletteRAM.size())
+        {
+            std::cout<<"Size does not match BGOBJPaletteRAM!\n";
+            return;
+        }
+        std::copy(x.begin(),x.end(),BGOBJPaletteRAM.begin());
+    }
+    void setVRAM(std::vector<int>&x)
+    {
+        if(x.size()!=VRAM.size())
+        {
+            std::cout<<"Size does not match VRAM!\n";
+            return;
+        }
+        std::copy(x.begin(),x.end(),VRAM.begin());
+    }
+    void setOAMOBJAttributes(std::vector<int>&x)
+    {
+        if(x.size()!=OAMOBJAttributes.size())
+        {
+            std::cout<<"Size does not match OAMOBJAttributes!\n";
+            return;
+        }
+        std::copy(x.begin(),x.end(),OAMOBJAttributes.begin());
+    }
     
 };
 
@@ -130,6 +158,61 @@ public:
         GamePakROMFlashROM2.resize(1024*1024*32,0);
         GamePakROMFlashROM3.resize(1024*1024*32,0);
         GamePakSRAM.resize(1024*64,0);
+    }
+
+    //getters and setters
+    std::vector<uint8_t>& getGamePakROMFlashROM1()
+    {
+        return GamePakROMFlashROM1;
+    }
+    std::vector<uint8_t>& GamePakROMFlashROM2()
+    {
+        return GamePakROMFlashROM2;
+    }
+    std::vector<uint8_t>& GamePakROMFlashROM3()
+    {
+        return GamePakROMFlashROM3;
+    }
+    std::vector<uint8_t>& getGamePakSRAM()
+    {
+        return GamePakSRAM;
+    }
+
+    void setGamePakROMFlashROM1(std::vector<uint8_t>&x)
+    {
+        if(x.size()!=getGamePakROMFlashROM1.size())
+        {
+            std::cout<<"Size does not match GamePakROMFlashROM1!\n";
+            return;
+        }
+        std::copy(x.begin(),x.end(),GamePakROMFlashROM1.begin());
+    }
+    void setGamePakROMFlashROM2(std::vector<uint8_t>&x)
+    {
+        if(x.size()!=GamePakROMFlashROM2.size())
+        {
+            std::cout<<"Size does not match GamePakROMFlashROM2!\n";
+            return;
+        }
+        std::copy(x.begin(),x.end(),GamePakROMFlashROM2.begin());
+    }
+    void setGamePakROMFlashROM3(std::vector<uint8_t>&x)
+    {
+        if(x.size()!=GamePakROMFlashROM3.size())
+        {
+            std::cout<<"Size does not match GamePakROMFlashROM3!\n";
+            return;
+        }
+        std::copy(x.begin(),x.end(),GamePakROMFlashROM3.begin());
+    }
+    void setGamePakSRAM(std::vector<uint8_t>&x)
+    {
+        if(x.size()!=GamePakSRAM.size())
+        {
+            std::cout<<"Size does not match GamePakSRAM!\n";
+            return;
+        }
+        std::copy(x.begin(),x.end(),GamePakSRAM.begin());
     }
 };
 
